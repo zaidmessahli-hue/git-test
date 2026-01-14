@@ -1,0 +1,20 @@
+<ul id="liste-tache">
+    {{#each taches}}
+        <li>
+            <label>
+                <input 
+                    type="checkbox" 
+                    {{#if this.est_fait}}checked{{/if}}
+                    data-id="{{this.id_tache}}">
+                {{this.texte}}
+            </label>
+        </li>
+    {{/each}}
+</ul>
+
+<form id="form-tache">
+    <input type="text" id="texte-tache" autofocus>
+    <input type="submit" value="Ajouter">
+</form>
+
+<div id="erreur" class="erreur"></div>
